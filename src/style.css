@@ -1,0 +1,84 @@
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+.svg-icon {
+    width: 2em;
+    height: 2em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+    fill: #4691f6;
+}
+
+.svg-icon circle {
+    stroke: #4691f6;
+    stroke-width: 1;
+}
+
+/** */
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+a, a:visited {
+    color: rgb(0, 114, 255);
+    text-decoration: none;
+}
+
+button {
+    height: 25px;;
+    background: #ffffff;
+    border: 1px solid black;
+    outline: none;
+}
+
+button + button {
+    margin-left: 5px
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+a:hover {
+    background: rgba(0, 114, 255, 0.1);
+    box-shadow: 0px 0px 0 5px rgba(0, 114, 255, 0.1);
+    border-radius: 2px;
+}
+
+.PartsList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.PartsList a {
+    margin-bottom: 10px;
+}
+
+.HomeLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 25px;
+    background:#f1f1f1;
+}
+
+.Page {
+    margin-top: 25px;
+    margin-left: 25px; 
+}
