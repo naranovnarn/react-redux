@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPageOne</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.js" integrity="sha256-kzv+r6dLqmz7iYuR2OdwUgl4X5RVsoENBzigdF5cxtU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.js" integrity="sha256-N8dNe7UvR0kSfEBSJiwOPLBEyfWCd/aaQL2pdWqDJwE=" crossorigin="anonymous"></script>
+</head>
+    <body>
+        <div id='PartOne'>Загрузка...</div>
+
+        <script type="text/template" id='template/PartOne'>
+            <pre class='PartOne__state'><%= state %></pre>
+            <button class='PartOne__generate'>GENERATE RANDOM</button>
+        </script>
+    
+        <script type="text/javascript">
+
+            // Здесь доступна глобальная переменная Redux
+            // C ее методами, например Redux.createStore
+            
+            class PartOne {
+
+                constructor(template) {
+                    this.template = template;
+                    this.render();
+                }
+
+                generateRandom = () => {
+                    alert(42);
+                }
+
+                render() {
+                    const data = { state: 0.42 };
+
+                    const render_template = this.template(data);
+                    document.getElementById('PartOne').innerHTML = render_template;
+
+                    const generate_button = document.querySelector('.PartOne__generate');
+                    generate_button.addEventListener('click', this.generateRandom);
+                }
+
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                // _.template - это шаблонизатор lodash
+                const template_PartOne = _.template(document.getElementById('template/PartOne').innerHTML);
+                new PartOne(template_PartOne);
+            });
+        
+        </script>
+    </body>
+</html>

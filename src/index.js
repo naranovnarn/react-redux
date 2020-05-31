@@ -5,8 +5,9 @@ import { ReactComponent as HomeIcon } from './home.svg';
 import './style.css';
 
 const PartZero  = React.lazy(() => import('./part-00/PartZero'));
+const PartOne  = React.lazy(() => import('./part-01/PartOne'));
 
-const PARTS_COMPONENTS = [ PartZero ];
+const PARTS_COMPONENTS = [ PartZero, PartOne ];
 
 const Link = ({ number }) => <a href={`/${number}`}>Часть {number}</a>;
 const Page = ({ children }) => <div className="Page">{children}</div>;
