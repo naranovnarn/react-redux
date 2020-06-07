@@ -7,8 +7,9 @@ import './style.css';
 const PartZero = React.lazy(() => import('./part-00/PartZero'));
 const PartOne  = React.lazy(() => import('./part-01/PartOne'));
 const PartTwo  = React.lazy(() => import('./part-02/PartTwo'));
+const PartThree  = React.lazy(() => import('./part-03/PartThree'));
 
-const PARTS_COMPONENTS = [ PartZero, PartOne, PartTwo ];
+const PARTS_COMPONENTS = [ PartZero, PartOne, PartTwo, PartThree ];
 
 const Link = ({ number }) => <a href={`/${number}`}>Часть {number}</a>;
 const Page = ({ children }) => <div className="Page">{children}</div>;
