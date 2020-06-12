@@ -8,8 +8,9 @@ const PartZero = React.lazy(() => import('./part-00/PartZero'));
 const PartOne  = React.lazy(() => import('./part-01/PartOne'));
 const PartTwo  = React.lazy(() => import('./part-02/PartTwo'));
 const PartThree  = React.lazy(() => import('./part-03/PartThree'));
+const PartFour  = React.lazy(() => import('./part-04/PartFour'));
 
-const PARTS_COMPONENTS = [ PartZero, PartOne, PartTwo, PartThree ];
+const PARTS_COMPONENTS = [ PartZero, PartOne, PartTwo, PartThree, PartFour ];
 
 const Link = ({ number }) => <a href={`/${number}`}>Часть {number}</a>;
 const Page = ({ children }) => <div className="Page">{children}</div>;
@@ -68,13 +69,15 @@ const CurrentComponent = getPageComponent();
 const pageName = getPageName();
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <>
       <React.Suspense fallback={<div></div>}>
         <HomeLink pageName={pageName} />
         <Page>
           <CurrentComponent />
         </Page>
       </React.Suspense>
-  </React.StrictMode>,
+  </>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
