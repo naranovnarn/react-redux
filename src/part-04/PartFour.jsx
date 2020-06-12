@@ -34,7 +34,7 @@ const reducer = (state = initState, action) => {
       // Если этот момент не понимать, то будут возникать трудноуловимые баги.
 
       // Если мы будем использовать эти строчки, то State изменится
-      // НО mapStateToProps() # не будет вызван и компонент не получит обновленный State
+      // НО mapStateToProps() #161 не будет вызван и компонент не получит обновленный State
       // Причина: "React Redux" для избежания лишнего рендера компонентов может НЕ вызывать mapStateToProps()
       // даже если произошел диспатч экшена и данные в State изменились
 
@@ -42,14 +42,14 @@ const reducer = (state = initState, action) => {
       // И если предыдущий State === возвращаемому State, то mapStateToProps() НЕ вызывается.
       // А следовательно компонент може тне узнать об изменениях в State и продолжать отображать то, что не соответвует новым данным из State.
 
-      // Далее две строчки кода #, которые мы использовали раньше, демонстрируют эту проблему.
+      // Далее две строчки кода #48,49, которые мы использовали раньше, демонстрируют эту проблему.
       // state это объект, внутри него изменился count, но ссылка на объект осталась прежней
       // так что возвращаемый state === тому, который был на шаг назад
       // state.count++; // можно их раскомментировать и увидеть,
       // return state;  // что компонент не реагирует на изменения State при нажатии на кнопку "ADD COUNT", которая диспатчит экшен.
 
       // А вот так будет работать
-      // Просто копируем state # и изменяем значение свойства count
+      // Просто копируем state #54 через деструктуризацию и изменяем значение свойства count
       const add_count = state.count + 1;
       const nextState = { ...state, count: add_count };
 
@@ -67,7 +67,6 @@ const reducer = (state = initState, action) => {
 
 const store = createStore(reducer);
 
-/** */
 class PartFour extends React.Component {
 
   constructor(props) {
@@ -106,7 +105,7 @@ class PartFour extends React.Component {
     //   
     // Но вторая причина может быть неубедительна, если вы уверены, что серверный рендеринг вам не понадобится
 
-    // И так воспользовашись connect # в наш компонент теперь прокидывается дополнительный Prop под названием dispatch
+    // И так воспользовашись connect #191 в наш компонент теперь прокидывается дополнительный Prop под названием dispatch
     // А значит можно диспатчит так вместо store.dispatch(action)
     this.props.dispatch(action);
 
@@ -121,7 +120,7 @@ class PartFour extends React.Component {
 
   render() {
 
-    // Удаляем эти строки #, теперь мы работаем со Store не на прямую
+    // Удаляем эти строки #125, #126, теперь мы работаем со Store не на прямую
     // а через connect c mapStateToProps #
     // const state = store.getState();
     // const debugg_state = JSON.stringify(state);
@@ -133,7 +132,7 @@ class PartFour extends React.Component {
     console.log('render -> props', this.props);
 
     // Такой момент, в консоли можно было бы увидеть, что вызов render() и mapStateToProps() задваивается подряд, хотя для этого нет причины
-    // Чтобы это не происходио и не раздражало, я убрал компонент <React.StrictMode> # в react_redux/src/index.js
+    // Чтобы это не происходио и не раздражало, я убрал компонент <React.StrictMode> #72, #81 в react_redux/src/index.js
     // Потому что это side effect работы Strict Mode, когда мы используем "React Redux"
     // https://reactjs.org/docs/strict-mode.html
     // https://reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects
