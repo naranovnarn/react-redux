@@ -10,8 +10,10 @@ const PartTwo  = React.lazy(() => import('./part-02/PartTwo'));
 const PartThree  = React.lazy(() => import('./part-03/PartThree'));
 const PartFour  = React.lazy(() => import('./part-04/PartFour'));
 const PartFive  = React.lazy(() => import('./part-05/PartFive'));
+// const PartSix  = React.lazy(() => import('./part-06/boilerplate'));
+const PartSix  = React.lazy(() => import('./part-06/PartSix'));
 
-const PARTS_COMPONENTS = [ PartZero, PartOne, PartTwo, PartThree, PartFour, PartFive ];
+const PARTS_COMPONENTS = [ PartZero, PartOne, PartTwo, PartThree, PartFour, PartFive, PartSix ];
 
 const Link = ({ number }) => <a href={`/${number}`}>Часть {number}</a>;
 const Page = ({ children }) => <div className="Page">{children}</div>;
