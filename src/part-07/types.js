@@ -1,0 +1,2 @@
+export const GENERATE_RANDOM = 'GENERATE_RANDOM';
+export const REDUX_LOGGER = 'REDUX_LOGGER';

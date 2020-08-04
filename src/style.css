@@ -59,6 +59,22 @@ a:hover {
     border-radius: 2px;
 }
 
+input {
+    height: 25px;;
+    background: #ffffff;
+    border: 1px solid black;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+input + input {
+    margin-left: 5px
+}
+input + button {
+    margin-left: 5px
+}
+
 .PartsList {
     display: flex;
     flex-direction: column;

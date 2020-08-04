@@ -1,0 +1,27 @@
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.cell {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.row:nth-child(even) {
+    background: gainsboro;
+}
+
+.row:first-child {
+    animation: slide-up 0.8s ease;
+
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
