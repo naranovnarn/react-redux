@@ -4,7 +4,7 @@ import { ReactComponent as HomeIcon } from './home.svg';
 
 import './style.css';
 
-const PartZero = React.lazy(() => import('./part-00/PartZero'));
+const PartZero = React.lazy(() => import('./part-00/Homework'));
 const PartOne  = React.lazy(() => import('./part-01/PartOne'));
 const PartTwo  = React.lazy(() => import('./part-02/PartTwo'));
 const PartThree  = React.lazy(() => import('./part-03/PartThree'));
