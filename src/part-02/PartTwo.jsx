@@ -1,32 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createStore } from 'redux';
 
-// type
 const GENERATE_RANDOM = 'GENERATE_RANDOM';
 const ADD_COUNT = 'ADD_COUNT';
 
-// Функция возвращает случайное число до max_number
-// но не включительно max_number
-// Используем ее для следующих примеров
 function get_random(max_number) {
   return Math.floor(Math.random() * max_number);
 }
 
-// Используем хеш-таблицу вмесо примитивного значения, чтобы хранить больше сущностей в State
+
 const initState = {
   random: 42,
   count: 0
 };
 
-// Теперь наш редьюсер обрабатывает два экшена: GENERATE_RANDOM #28 и ADD_COUNT #34.
-// В него добавили условие для ADD_COUNT
-// В предыдущем уроке наш редьюсер обрабатывал только: GENERATE_RANDOM
-const reducer = (state = initState, action) => {
 
-  const { type } = action; // Небольшое улучшение, вместо того, чтобы писать в условиях if (action.type... будем if (type...
+const reducer = (state = initState, action) => {
+  const { type } = action;
 
   if (type === GENERATE_RANDOM) {
-    const { max_number = 10 } = action; // Если в экшене не будет свойства max_number, то по-умолчанию будет 10 (вместо undefined)
+    const { max_number = 10 } = action; 
     state.random = get_random(max_number);
     return state;
   }
@@ -67,6 +60,8 @@ class PartTwo extends React.Component {
     // Приведем его к строке с помощью JSON.stringify
     const state = store.getState();
     const debugg_state = JSON.stringify(state, null, ' ');
+
+    console.log(state)
 
     return (
       <div className="PartTwo">

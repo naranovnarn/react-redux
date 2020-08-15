@@ -6,10 +6,10 @@ import './style.css';
 
 const PartZero = React.lazy(() => import('./part-00/Homework'));
 const PartOne  = React.lazy(() => import('./part-01/PartOneHome'));
-const PartTwo  = React.lazy(() => import('./part-02/PartTwo'));
-const PartThree  = React.lazy(() => import('./part-03/PartThree'));
-const PartFour  = React.lazy(() => import('./part-04/PartFour'));
-const PartFive  = React.lazy(() => import('./part-05/PartFive'));
+const PartTwo  = React.lazy(() => import('./part-02/PartTwoHome'));
+const PartThree  = React.lazy(() => import('./part-03/PartThreeHome'));
+const PartFour  = React.lazy(() => import('./part-04/PartFourHome'));
+const PartFive  = React.lazy(() => import('./part-05/PartFiveHome'));
 // const PartSix  = React.lazy(() => import('./part-06/boilerplate'));
 const PartSix  = React.lazy(() => import('./part-06/PartSix'));
 const PartSeven  = React.lazy(() => import('./part-07/PartSeven'));

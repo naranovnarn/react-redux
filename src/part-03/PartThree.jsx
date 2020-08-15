@@ -57,11 +57,7 @@ const reducer = (state = initState, action) => {
 
 // В этих примерах функции GENERATE_RANDOM и ADD_COUNT небольшие
 // Но в практике они бывают на много строк, так как в них производится болшая часть бизнес-логики приложения
-function GENERATE_RANDOM(state, payload) {
-  const { max_number = 10 } = payload;
-  state.random = get_random(max_number);
-  return state;
-}
+
 
 function ADD_COUNT(state) {
   state.count++;
